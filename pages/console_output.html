@@ -1,0 +1,67 @@
+<style>
+    pre.code {
+        background-color: #d0d0d0;
+        border-radius: 5px;
+        padding: 10px;
+        width: 90%;
+        margin-left: 10px;
+        font-family: monospace;
+        line-height: 1.5;
+        overflow-x: auto;
+    }
+
+    section {
+        width: 100%;
+    }
+</style>
+
+<main>
+    <h2>Cheat Sheet - Console Output</h2>
+    <a>Back to Cheat Sheet Directory</a>
+
+    <section>
+        <h3>Summary</h3>
+        <p>The console is a window in your Eclipse app that lets you output plain text and helps you debug your code.
+            The console is accessed through some standard methods, which will be explained below.</p>
+    </section>
+    <section>
+        <h4>Printing text</h4>
+
+        <p>To print out a line of text to the console, use the following method. Replace "Your message here" with your
+            message, and make sure to keep the quotations.</p>
+        <pre class="code">System.out.println("Your message here");</pre>
+
+        <p>Using println automatically goes to the next line. To avoid this, use the following:</p>
+        <pre class="code">System.out.print("Your message here");</pre>
+
+        <p>In the string cheat sheet, you can find more information about what you can print out. You can also find
+            information on the scanner cheat sheet about how to read input in as well.</p>
+    </section>
+    <section>
+        <h4>Printing variables</h4>
+
+        <p>Printing out variables is a little different than printing out text. To print out a variable, use the
+            following:</p>
+        <pre class="code">System.out.println(variableName);</pre>
+
+        <p>Replace "variableName" with the name of the variable you want to print out. This will print out the value of
+            the variable.</p>
+
+        <p>You can always chain print statements together to print out a complex message. For example:</p>
+        <pre class="code">String name="Nate";
+int age="17";
+System.out.println("My name is " 
+    + name + " and I am " 
+    + age + " years old.");
+</pre>
+        <p>Confused about what those plus signs are doing? No worries, check the strings cheat sheet.</p>
+        </pre>
+    </section>
+    <section>
+        <h4>See Also</h4>
+        <ul>
+            <li><a>Strings cheat sheet</a></li>
+            <li><a>Scanner cheat sheet</a></li>
+        </ul>
+    </section>
+</main>
