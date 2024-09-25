@@ -1,67 +1,98 @@
-<style>
-    pre.code {
-        background-color: #d0d0d0;
-        border-radius: 5px;
-        padding: 10px;
-        width: 90%;
-        margin-left: 10px;
-        font-family: monospace;
-        line-height: 1.5;
-        overflow-x: auto;
-    }
+<!DOCTYPE html>
 
-    section {
-        width: 100%;
-    }
-</style>
+<html lang="en">
 
-<main>
-    <h2>Cheat Sheet - Console Output</h2>
-    <a>Back to Cheat Sheet Directory</a>
+<head>
+    
+    <!-- Setup Document -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet - Console Output</title>
 
-    <section>
-        <h3>Summary</h3>
-        <p>The console is a window in your Eclipse app that lets you output plain text and helps you debug your code.
-            The console is accessed through some standard methods, which will be explained below.</p>
-    </section>
-    <section>
-        <h4>Printing text</h4>
+    <!-- Set up the bane of humanity (jQuery)  -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
-        <p>To print out a line of text to the console, use the following method. Replace "Your message here" with your
-            message, and make sure to keep the quotations.</p>
-        <pre class="code">System.out.println("Your message here");</pre>
+    <!-- Set up highlightjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <!-- Set up toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <p>Using println automatically goes to the next line. To avoid this, use the following:</p>
-        <pre class="code">System.out.print("Your message here");</pre>
+    <!-- Style stuff -->
+    <link defer rel="stylesheet" href="./../styles.css">
 
-        <p>In the string cheat sheet, you can find more information about what you can print out. You can also find
-            information on the scanner cheat sheet about how to read input in as well.</p>
-    </section>
-    <section>
-        <h4>Printing variables</h4>
+</head>
 
-        <p>Printing out variables is a little different than printing out text. To print out a variable, use the
-            following:</p>
-        <pre class="code">System.out.println(variableName);</pre>
+<body>
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function() {
+            const codeElements = document.querySelectorAll(".copyable");
+            codeElements.forEach(codeElement => {
+                codeElement.addEventListener("click", () => {
+                    const codeContents = codeElement.innerText;
+                    navigator.clipboard.writeText(codeContents);
 
-        <p>Replace "variableName" with the name of the variable you want to print out. This will print out the value of
-            the variable.</p>
+                    toastr.options.progressBar = true;
+                    toastr.success("Copied to clipboard.");
+                });
+            });
+        });
+    </script>
 
-        <p>You can always chain print statements together to print out a complex message. For example:</p>
-        <pre class="code">String name="Nate";
+    <main>
+        <h2>Cheat Sheet - Console Output</h2>
+        <a>Back to Cheat Sheet Directory</a>
+
+        <section>
+            <h3>Summary</h3>
+            <p>The console is a window in your Eclipse app that lets you output plain text and helps you debug your
+                code.
+                The console is accessed through some standard methods, which will be explained below.</p>
+        </section>
+        <section>
+            <h4>Printing text</h4>
+
+            <p>To print out a line of text to the console, use the following method. Replace "Your message here" with
+                your
+                message, and make sure to keep the quotations.</p>
+            <pre><code class="language-java copyable">System.out.println("Your message here");</code></pre>
+
+            <p>Using println automatically goes to the next line. To avoid this, use the following:</p>
+            <pre><code class="language-java copyable">System.out.print("Your message here");</code></pre>
+
+            <p>In the string cheat sheet, you can find more information about what you can print out. You can also find
+                information on the scanner cheat sheet about how to read input in as well.</p>
+        </section>
+        <section>
+            <h4>Printing variables</h4>
+
+            <p>Printing out variables is a little different than printing out text. To print out a variable, use the
+                following:</p>
+            <pre><code class="language-java copyable">System.out.println(variableName);</code></pre>
+
+            <p>Replace "variableName" with the name of the variable you want to print out. This will print out the value
+                of
+                the variable.</p>
+
+            <p>You can always chain print statements together to print out a complex message. For example:</p>
+            <pre><code class="language-java copyable">String name="Nate";
 int age="17";
 System.out.println("My name is " 
     + name + " and I am " 
-    + age + " years old.");
-</pre>
-        <p>Confused about what those plus signs are doing? No worries, check the strings cheat sheet.</p>
-        </pre>
-    </section>
-    <section>
-        <h4>See Also</h4>
-        <ul>
-            <li><a>Strings cheat sheet</a></li>
-            <li><a>Scanner cheat sheet</a></li>
-        </ul>
-    </section>
-</main>
+    + age + " years old.");</code></pre>
+            <p>Confused about what those plus signs are doing? No worries, check the strings cheat sheet.</p>
+        </section>
+        <section>
+            <h4>See Also</h4>
+            <ul>
+                <li><a>Strings cheat sheet</a></li>
+                <li><a>Scanner cheat sheet</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>

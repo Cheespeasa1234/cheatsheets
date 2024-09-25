@@ -1,0 +1,20 @@
+.toastMessage {
+    font-family: sans-serif;
+}
+
+.copyable {
+    border: 1.5px solid #a1a1a1;
+    border-radius: 5px;
+    padding: 10px !important;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+.copyable:hover {
+    background: linear-gradient(to right, #880000 3px, #f3f3f3 3px) !important;
+    cursor: pointer;
+}
+
+section {
+    width: 100%;
+}
